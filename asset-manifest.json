@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/ReactFinances/static/css/main.fdeb3673.chunk.css",
-    "main.js": "/ReactFinances/static/js/main.70d4d76f.chunk.js",
-    "main.js.map": "/ReactFinances/static/js/main.70d4d76f.chunk.js.map",
+    "main.js": "/ReactFinances/static/js/main.c8e11687.chunk.js",
+    "main.js.map": "/ReactFinances/static/js/main.c8e11687.chunk.js.map",
     "runtime-main.js": "/ReactFinances/static/js/runtime-main.0b3ee300.js",
     "runtime-main.js.map": "/ReactFinances/static/js/runtime-main.0b3ee300.js.map",
     "static/js/2.f62f73c7.chunk.js": "/ReactFinances/static/js/2.f62f73c7.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.0b3ee300.js",
     "static/js/2.f62f73c7.chunk.js",
     "static/css/main.fdeb3673.chunk.css",
-    "static/js/main.70d4d76f.chunk.js"
+    "static/js/main.c8e11687.chunk.js"
   ]
 }
