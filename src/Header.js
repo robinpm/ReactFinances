@@ -1,33 +1,19 @@
 import { NavLink, HashRouter } from "react-router-dom";
-import Home from "./Home";
-import Table from "./Table";
-import SubmitForm from "./SubmitForm";
+import Navbar from "./Components/Navbar";
 
-const Header = ({ title }) => {
+const Header = ({ title , subtitle }) => {
   document.title = title;
   return (
-      <HashRouter>
-          <header className="header">
-      <h2 className="title">{title}</h2>
-      <ul className="navbar">
-        <li>
-          <NavLink href="../Home">Home</NavLink>
-        </li>
-        <li>
-          <NavLink href="../Table">Table View</NavLink>
-        </li>
-        <li>
-          <NavLink href="../SubmitForm">Submit</NavLink>
-        </li>
-      </ul>
-        </header>
-    </HashRouter>
+    <>
+    <h1 className='pageTitle'>{title}</h1>
+    <h2 className='pageSub'>{subtitle}</h2>
+    <Navbar /></>
 
   );
 };
 
 Header.defaultProps = {
-  title: "Shared Expenses",
+  title: "SHARED EXPENSES",
 };
 
 export default Header;

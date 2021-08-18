@@ -1,31 +1,26 @@
 import React, { Component } from "react";
 // import Header from "./Header";
-import { Route, NavLink, BrowserRouter as Router, HashRouter } from "react-router-dom";
+import { Route, HashRouter } from "react-router-dom";
 import Home from "./Home";
 import Table from "./Table";
-import SubmitForm from "./SubmitForm";
+import Submitted from "./Submitted";
+import Navbar from "./Components/Navbar";
+import Header from "./Header";
 
 class Main extends Component {
   render() {
+    const currDate = new Date();
+    const month = currDate.toLocaleString("default", { month: "long" });
+    const year = currDate.getFullYear();
+    const pageTitle = month + " " + year;
     return (
       <HashRouter>
         <div>
-          <h1>Shared Expenses</h1>
-          <ul className="header">
-            <li>
-              <NavLink exact to="/">Homee</NavLink>
-            </li>
-            <li>
-              <NavLink to="/table">Table</NavLink>
-            </li>
-            <li>
-              <NavLink to="/submit">Submit</NavLink>
-            </li>
-          </ul>
+          <Header subtitle={pageTitle} />
           <div className="content">
             <Route exact path="/" component={Home} />
             <Route path="/table" component={Table} />
-            <Route path="/submit" component={SubmitForm} />
+            <Route path="/submit" component={Submitted} />
           </div>
         </div>
       </HashRouter>

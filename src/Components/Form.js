@@ -1,7 +1,9 @@
-const Form = () => {
+const Form = ({ onSubmit }) => {
+
+  
   return (
     <div>
-      <form action="./gogo.php" method="post">
+      <form action={onSubmit}>
         <div className="input-box">
           <input type="text" name="name" placeholder="Who are you?" />
         </div>
@@ -16,6 +18,7 @@ const Form = () => {
           />
         </div>
         <div className="input-box">
+          <i>$</i>
           <input
             type="number"
             step="0.01"
@@ -25,7 +28,6 @@ const Form = () => {
             name="amount"
             placeholder="How much was it?"
           />
-          <i>$</i>
         </div>
         <div className="input-box">
           <input type="text" name="notes" placeholder="Anything else?" />
