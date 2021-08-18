@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/ReactFinances/static/css/main.b39bc8e1.chunk.css",
-    "main.js": "/ReactFinances/static/js/main.292f594e.chunk.js",
-    "main.js.map": "/ReactFinances/static/js/main.292f594e.chunk.js.map",
+    "main.css": "/ReactFinances/static/css/main.fafe9d3f.chunk.css",
+    "main.js": "/ReactFinances/static/js/main.b851fe23.chunk.js",
+    "main.js.map": "/ReactFinances/static/js/main.b851fe23.chunk.js.map",
     "runtime-main.js": "/ReactFinances/static/js/runtime-main.0b3ee300.js",
     "runtime-main.js.map": "/ReactFinances/static/js/runtime-main.0b3ee300.js.map",
-    "static/js/2.448db83e.chunk.js": "/ReactFinances/static/js/2.448db83e.chunk.js",
-    "static/js/2.448db83e.chunk.js.map": "/ReactFinances/static/js/2.448db83e.chunk.js.map",
+    "static/js/2.25cb131e.chunk.js": "/ReactFinances/static/js/2.25cb131e.chunk.js",
+    "static/js/2.25cb131e.chunk.js.map": "/ReactFinances/static/js/2.25cb131e.chunk.js.map",
     "index.html": "/ReactFinances/index.html",
-    "static/css/main.b39bc8e1.chunk.css.map": "/ReactFinances/static/css/main.b39bc8e1.chunk.css.map",
-    "static/js/2.448db83e.chunk.js.LICENSE.txt": "/ReactFinances/static/js/2.448db83e.chunk.js.LICENSE.txt"
+    "static/css/main.fafe9d3f.chunk.css.map": "/ReactFinances/static/css/main.fafe9d3f.chunk.css.map",
+    "static/js/2.25cb131e.chunk.js.LICENSE.txt": "/ReactFinances/static/js/2.25cb131e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.0b3ee300.js",
-    "static/js/2.448db83e.chunk.js",
-    "static/css/main.b39bc8e1.chunk.css",
-    "static/js/main.292f594e.chunk.js"
+    "static/js/2.25cb131e.chunk.js",
+    "static/css/main.fafe9d3f.chunk.css",
+    "static/js/main.b851fe23.chunk.js"
   ]
 }
