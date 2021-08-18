@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Form from "./Components/Form";
+import Header from "./Header";
 
 function App() {
+  const currDate = new Date();
+  const month = currDate.toLocaleString("default", { month: "long" });
+  const year = currDate.getFullYear();
+  const pageTitle = "Shared Expenses | " + month + " " + year;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header title={pageTitle} />
+      <div id="home">
+        <Form />
+      </div>
+      <div id="tableview"></div>
     </div>
   );
 }
