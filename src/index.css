@@ -4,20 +4,22 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background:none;
+  background: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
+  -webkit-overflow-scrolling: touch;
   background-color: rgb(189, 183, 241);
   padding: 20px;
   margin: 0;
-  font-family:"Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
@@ -136,15 +138,14 @@ ul.header li a {
 }
 
 #price {
-width:93%;
+  width: 93%;
 }
 
 form i {
   display: inline-block;
   text-align: left;
-  width:7%;
+  width: 7%;
   font-style: normal;
   font-weight: bold;
-  color:grey;
-
+  color: grey;
 }
