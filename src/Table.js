@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 
+
 class Table extends Component {
   render() {
+    
+    console.log('getting data....\n')
+
+    fetch("https://robinpm.com/F4ncyScr1pt5/getMonth.php")
+      .then((response) => response.text())
+      .then((data) => console.log(data));
     return (
       <div>
-        <h2>GOT QUESTIONS?</h2>
-        <p>
-          The easiest thing to do is post on our{" "}
-          <a href="http://forum.kirupa.com">forums</a>.
-        </p>
+        TABLES GOES HERE
       </div>
     );
   }

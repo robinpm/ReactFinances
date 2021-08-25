@@ -1,11 +1,11 @@
-import { NavLink, HashRouter } from "react-router-dom";
 import Navbar from "./Components/Navbar";
+import Favicon from "react-favicon";
 
 const Header = ({ title, subtitle }) => {
-  document.title = title;
+  document.title = title + " | " + subtitle;
   return (
     <>
-      
+      <Favicon url="../../public/favicon.png" />
       <h1 className="pageTitle">{title}</h1>
       <h2 className="pageSub">{subtitle}</h2>
       <Navbar />
@@ -14,7 +14,7 @@ const Header = ({ title, subtitle }) => {
 };
 
 Header.defaultProps = {
-  title: "SHARED EXPENSES",
+  title: "Shared Expenses",
 };
 
 export default Header;

@@ -4,14 +4,11 @@ import { Route, HashRouter } from "react-router-dom";
 import Home from "./Home";
 import Table from "./Table";
 import Submitted from "./Submitted";
-import Navbar from "./Components/Navbar";
 import Header from "./Header";
 
 class Main extends Component {
   render() {
-      document.addEventListener("touchstart", function (e) {
-        e.preventDefault();
-      });
+      
     const currDate = new Date();
     const month = currDate.toLocaleString("default", { month: "long" });
     const year = currDate.getFullYear();

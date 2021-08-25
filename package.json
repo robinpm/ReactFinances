@@ -1,7 +1,8 @@
 {
   "name": "reactfinances",
   "version": "0.1.0",
-  "homepage": "https://robinpm.github.io/ReactFinances/",
+  "homepage": ".",
+
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",

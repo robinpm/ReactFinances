@@ -6,7 +6,7 @@ const Navbar = () => {
       <div>
         <ul className="header">
           <li>
-            <NavLink style={{'border-radius':'5px 0px 0px 5px'}} exact to="/">
+            <NavLink style={{'borderRadius':'5px 0px 0px 5px'}} exact to="/">
               Home
             </NavLink>
           </li>
