@@ -4,7 +4,7 @@ class SubmitForm extends Component {
   render() {
     return (
       <div>
-        <h2>SubmitForm</h2>
+        <h2>Submit Form</h2>
         
       </div>
     );
