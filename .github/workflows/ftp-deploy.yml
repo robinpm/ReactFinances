@@ -15,6 +15,6 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          remote_dir: "./drypanini-site/"
+          remote_dir: "/me.robinpm.com/files/drypanini-site"
           local_dir: "./"
           delete: "false"
