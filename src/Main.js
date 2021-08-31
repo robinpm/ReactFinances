@@ -6,17 +6,29 @@ import Table from "./Table";
 import Submitted from "./Submitted";
 import Header from "./Header";
 
+// import axios from "axios";
+
 class Main extends Component {
   render() {
-      
+    
+    
     const currDate = new Date();
     const month = currDate.toLocaleString("default", { month: "long" });
     const year = currDate.getFullYear();
     const pageTitle = month + " " + year;
+    // const sampleData = getRequest({}, "connect.php");
+    // console.log(sampleData);
+    
+    
+
+    
+
+
     return (
       <HashRouter>
         <div>
           <Header subtitle={pageTitle} />
+
           <div className="content">
             <Route exact path="/" component={Home} />
             <Route path="/table" component={Table} />

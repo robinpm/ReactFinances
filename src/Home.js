@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import Form from "./Components/Form";
-import { NavLink } from "react-router-dom";
+
+// import { Route } from "react-router-dom";
+// import Submitted from "./Submitted";
 
 class Home extends Component {
   render() {
-    const Submit = () => {
-      return <NavLink to="/submit">Submit</NavLink>;
-    };
+
     return (
       <div>
-        <Form submit={Submit} />
+        <Form />
       </div>
     );
   }
