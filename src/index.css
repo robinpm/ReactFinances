@@ -160,12 +160,21 @@ table * {
   padding-left: 2px;
   margin: 0px; */
   text-align: center;
+  height: 50px;
 }
+thead {
+  color:white;
+  background-color: #20133a;
+}
+
 tr:nth-child(even) {
-  background: rgb(228, 228, 228);
-  border:none;
+  background: #f0f1f8;
+
+
 }
 
 td:nth-child(3){
+  width:40%;
   text-align: left;
+
 }

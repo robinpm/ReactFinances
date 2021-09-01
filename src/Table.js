@@ -58,7 +58,7 @@ class Table extends Component {
                   <td>{(item.Date).substr(5)}</td>
                   <td>{item.User}</td>
                   <td>{item.Description}</td>
-                  <td>{item.Amount}</td>
+                  <td>${item.Amount}</td>
                   {/* <td>{item.Notes}</td> */}
                 </tr>
               ))}
