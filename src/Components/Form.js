@@ -45,7 +45,7 @@ const Form = ({ onSubmit }) => {
       })
     );
     axios({
-      url: "https://api.stop-watch.xyz/testing/connect.php",
+      url: "https://api.stop-watch.xyz/webfinances.php",
       method: "POST",
       data: formData,
       headers: {
