@@ -41,79 +41,129 @@ class Table extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      // const testo = items.User[0];
+      // function onlyUnique(value, index, self) {
+      //   return self.indexOf(value) === index;
+      // }
 
-      console.log(userPriceArr[1][0]);
-      var robTotal = 0;
-      var conTotal = 0;
-      for (let i = 0; i < userPriceArr.length; i++) {
-        if (userPriceArr[i][0] == "Robin") {
-          // console.log("Rob");
-          robTotal += parseFloat(userPriceArr[i][1]);
-        } else {
-          conTotal += parseFloat(userPriceArr[i][1]);
-        }
-      }
+      // Calculate the totals and dues of each user
+      // Returns a n x 3 array where n is the amount of users
+      // Col 1: User name
+      // Col 2: Total Spent
+      // Col 3: Amount owed
+      // TBD - Col 4: Who it's owed to - TBD
+      const userCalc = (totalArr) => {
+        // Get unique list of users
+        let userList = [
+          ...new Set(
+            totalArr.map(function (value, index) {
+              return value[0];
+            })
+          ),
+        ];
+        userList.push("Total");
+        let userTable = [
+          userList,
+          new Array(userList.length + 1).fill(0),
+          new Array(userList.length + 1).fill(0),
+        ];
 
-      const getOwe = (total1, total2) => {
-        if (total1 >= total2) {
-          console.log("t1: ", total1, " | ", "t2: ", total2);
-          return (total1 - total2).toFixed(2);
-          
-        } else {
-          return 0;
+        userTable = userTable[0].map((_, colIndex) =>
+          userTable.map((row) => row[colIndex])
+        );
+        // Get total from OG array
+
+        // Set to be to two decimal places
+        let grandTotal = totalArr[0]
+          .map((_, colIndex) => totalArr.map((row) => row[colIndex]))[1] // Transpose array
+          .reduce(function (a, b) {
+            return parseFloat(a) + parseFloat(b); // then sum up the 2nd row's elementsmust be parsed as floats
+          }, 0)
+          .toFixed(2); // Set to be to two decimal places
+
+        userTable[userTable.length - 1][1] = grandTotal;
+        //Parse through all transactions
+        for (let i = 0; i < totalArr.length; i++) {
+          let currName = totalArr[i][0];
+          let currBill = totalArr[i][1];
+
+          //parse through the user table
+          for (let j = 0; j < userTable.length; j++) {
+            if (currName === userTable[j][0]) {
+              userTable[j][1] += parseFloat(currBill);
+            }
+          }
         }
+        console.log(userTable);
+
+        for (let i = 0 ; i < userTable.length ; i++){
+          userTable[i][2] = (
+            (grandTotal - userTable[i][1]) /
+            (userTable.length-1)
+          ).toFixed(2);
+
+         
+        }
+
+        console.log(
+          userTable[0][2],
+          " > ",
+          userTable[1][2],
+          " = ",
+          userTable[0][2] < userTable[1][2]
+        );
+
+
+
+        // let owed = userTable.map((userTotal) => ((grandTotal-userTotal[1])/userTotal.length).toFixed(2));
+        // let newTable = userTable + owed;
+
+        // DISGUSTING HARDCODED OWE WHAT TO WHO CODE
+         if (parseInt(userTable[0][2]) < parseInt(userTable[1][2])) {
+           userTable[1][2] = (userTable[1][2] - userTable[0][2]).toFixed(2);
+           userTable[0][2] = 'n/a';
+         } else {
+           userTable[0][2] = (userTable[0][2] - userTable[1][2]).toFixed(2);
+           userTable[1][2] = 'n/a';
+         }
+
+        console.log(userTable[1][2] - userTable[0][2]);
+        return userTable;
       };
+      // END UserCalc //
 
-      const robOwe = getOwe(conTotal, robTotal);
-      const conOwe = getOwe(robTotal, conTotal);
-
-      // if (conTotal > robTotal) {
-      //   var robOwe = (conTotal - robTotal).toFixed(2);
-      // } else {
-      //   var robOwe = 0;
-      // }
-
-      // if (robTotal > robTotal) {
-      //   var robOwe = (conTotal - robTotal).toFixed(2);
-      // } else {
-      //   var robOwe = 0;
-      // }
-
-      const tester = 1 + 1;
-      console.log(
-        conTotal.toFixed(2),
-        " | ",
-        robTotal.toFixed(2),
-        " | ",
-        tester
-      );
+      const userTable = userCalc(userPriceArr);
+      let grandTotal = userTable[userTable.length - 1][1];
+      // console.log(grandTotal);
+      const styleObj = {
+        color: `rgb(${(grandTotal / 1000) * 255},0,0)`,
+      };
 
       return (
         <div>
-          <table>
-            <thead>
+          <h2>
+            Total Spent: <span style={styleObj}> ${grandTotal}</span>
+          </h2>
+          <br />
+          <table id="exprep">
+            <thead className="no-touchy">
               <tr>
                 <th>Name</th>
-                <th>$$ Spent</th>
+                <th>Amount Spent</th>
                 <th>Owes</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th>Robin</th>
-                <th>$ {robTotal.toFixed(2)}</th>
-                <th>$ {robOwe}</th>
-              </tr>
-              <tr>
-                <th>Connie</th>
-                <th>$ {conTotal.toFixed(2)}</th>
-                <th>$ {conOwe}</th>
-              </tr>
+              {userTable.map((user) => (
+                <tr key={user.id}>
+                  <td>{user[0]}</td>
+                  <td>$ {user[1]}</td>
+                  <td>$ {user[2]}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
-          <table className="">
-            <thead>
+          <table id="transactions">
+            <thead className="no-touchy">
               <tr>
                 <th>Date</th>
                 <th>Name</th>
@@ -127,7 +177,7 @@ class Table extends Component {
                 <tr key={item.id}>
                   <td>{item.Date.substr(5)}</td>
                   <td>{item.User}</td>
-                  <td>{item.Description}</td>
+                  <td id="Desc">{item.Description}</td>
                   <td>${item.Amount}</td>
                   {/* <td>{item.Notes}</td> */}
                 </tr>

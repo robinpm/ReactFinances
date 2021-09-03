@@ -61,7 +61,7 @@ const Form = ({ onSubmit }) => {
   };
 
   return (
-    <div id="myForm">
+    <div className="no-touchy" id="myForm">
       <div className="input-box">
         <input
           type="text"

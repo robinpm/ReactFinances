@@ -14,6 +14,11 @@ body {
   padding: 20px;
   margin: 0;
   font-family: "Poppins", sans-serif;
+  
+}
+
+.no-touchy {
+  
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -156,9 +161,7 @@ table {
   border-collapse: collapse;
 }
 table * {
-  /* border: 0px solid black;
-  padding-left: 2px;
-  margin: 0px; */
+ 
   text-align: center;
   height: 50px;
 }
@@ -173,8 +176,18 @@ tr:nth-child(even) {
 
 }
 
-td:nth-child(3){
+#exprep tbody tr:last-child {
+  display:none;
+
+}
+
+#Desc{
   width:40%;
   text-align: left;
 
+}
+
+#total {
+  text-align: center;
+  /* color:red; */
 }
